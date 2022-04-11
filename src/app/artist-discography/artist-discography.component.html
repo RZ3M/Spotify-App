@@ -1,0 +1,68 @@
+<h1>{{ artist?.name }}</h1>
+<p>
+  Full discography for {{ artist?.name }}<br />
+  Click the <strong>album cover</strong> for more information.
+</p>
+<br />
+
+<mat-card
+  *ngIf="artist"
+  [style.background]="
+    'url(' + artist.images[0].url + ') no-repeat center center'
+  "
+  [style.background-size]="'cover'"
+  [style.height]="'450px'"
+>
+</mat-card>
+<br /><br />
+<h1>Top Tracks in <strong>Canada</strong></h1>
+
+<mat-list *ngFor="let track of tracks">
+  <mat-card>
+    <mat-card-content fxLayout="row wrap" fxLayout.xs="column">
+      <img
+        src="{{ track.album.images[0].url }}"
+        alt="album cover"
+        [style.margin]="'10px'"
+        [style.max-width]="'5%'"
+        [routerLink]="['/album', track.album.id]"
+      />
+      <div fxFlex>
+        <div [style.min-width]="'200px'" [style.margin]="'10px'">
+          <strong>Track: </strong> {{ track.name }}<br />
+          <strong>Album: </strong> {{ track.album.name }}<br /><br />
+          <strong>Duration:</strong> {{ (track.duration_ms / 60000).toFixed(2)
+          }}<br />
+          <strong>Overall Popularity: </strong>{{ track.popularity
+          }}<br /><br />
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</mat-list>
+<br /><br />
+
+<h1>Full Discography</h1>
+
+<div fxLayout="row wrap" fxLayout.xs="column">
+  <!-- Single "Responsive" Card-->
+  <div fxFlex [style.margin]="'20px'" *ngFor="let album of albums">
+    <mat-card [style.min-width]="'200px'">
+      <mat-card-header>
+        <mat-card-title>{{ album.name }}</mat-card-title>
+        <mat-card-subtitle>Album Title</mat-card-subtitle>
+      </mat-card-header>
+
+      <img
+        mat-card-image
+        class="album-cover"
+        [routerLink]="['/album', album.id]"
+        src="{{ album.images[0].url }}"
+        alt="album art"
+      />
+      <strong>Release Date: </strong>{{ album.release_date }}<br />
+      <strong>Tracks: </strong>{{ album.total_tracks }}
+    </mat-card>
+  </div>
+  <!-- -->
+</div>
