@@ -6,9 +6,10 @@
  *
  * Name: Jack Ma    Student ID: 150150209    Date: 04/10/2022
  *
- * API Link: https://jm-spotify-user-api.herokuapp.com/api/
- * APP Link: https://spotify-app-bay.vercel.app
- * 
+ * Angular App (Deployed) Link: https://spotify-app-bay.vercel.app
+ *
+ * User API (Heroku) Link: https://jm-spotify-user-api.herokuapp.com/api/
+ *
  ********************************************************************************/
 
 import { Component, OnInit } from '@angular/core';
