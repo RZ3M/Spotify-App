@@ -24,7 +24,10 @@
         src="{{ track.album.images[0].url }}"
         alt="album cover"
         [style.margin]="'10px'"
+        [style.min-width]="'100px'"
+        [style.min-height]="'100px'"
         [style.max-width]="'5%'"
+        [style.max-height]="'5%'"
         [routerLink]="['/album', track.album.id]"
       />
       <div fxFlex>
