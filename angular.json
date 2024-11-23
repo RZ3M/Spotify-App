@@ -122,5 +122,7 @@
       }
     }
   },
-  "defaultProject": "spoticlone"
+  "cli": {
+    "analytics": false
+  }
 }
