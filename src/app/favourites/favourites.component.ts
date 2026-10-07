@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { MusicDataService } from '../music-data.service';
 
 @Component({
+  standalone: false,
   selector: 'app-favourites',
   templateUrl: './favourites.component.html',
   styleUrls: ['./favourites.component.css'],

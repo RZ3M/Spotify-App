@@ -6,9 +6,9 @@
 </p>
 
 <div class="content">
-  <div fxLayout="row wrap" fxLayout.xs="column">
+  <div class="responsive-row">
     <!-- Single "Responsive" Card-->
-    <div fxFlex [style.margin]="'20px'" *ngFor="let release of releases">
+    <div class="flex-item" [style.margin]="'20px'" *ngFor="let release of releases">
       <mat-card [style.min-width]="'200px'">
         <mat-card-header>
           <mat-card-title>{{ release.name }}</mat-card-title>
@@ -24,13 +24,13 @@
         <strong>Release Date: </strong>{{ release.release_date }}<br />
         <strong>Tracks: </strong>{{ release.total_tracks }}<br /><br />
         <mat-card-content>
-          <mat-chip-list aria-label="Artist selection">
+          <mat-chip-set aria-label="Artist selection">
             <mat-chip
               *ngFor="let artist of release.artists"
               [routerLink]="['/artist', artist.id]"
               >{{ artist.name }}</mat-chip
             >
-          </mat-chip-list>
+          </mat-chip-set>
         </mat-card-content>
       </mat-card>
     </div>

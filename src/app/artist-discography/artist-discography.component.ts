@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { MusicDataService } from '../music-data.service';
 
 @Component({
+  standalone: false,
   selector: 'app-artist-discography',
   templateUrl: './artist-discography.component.html',
   styleUrls: ['./artist-discography.component.css'],

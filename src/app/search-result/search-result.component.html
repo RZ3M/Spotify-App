@@ -7,9 +7,9 @@
 <br />
 
 <div class="content">
-  <div fxLayout="row wrap" fxLayout.xs="column">
+  <div class="responsive-row">
     <!-- single result "card"-->
-    <div fxFlex [style.margin]="'20px'" *ngFor="let result of results">
+    <div class="flex-item" [style.margin]="'20px'" *ngFor="let result of results">
       <mat-card [style.min-width]="'200px'">
         <mat-card-header>
           <mat-card-title>{{ result.name }}</mat-card-title>

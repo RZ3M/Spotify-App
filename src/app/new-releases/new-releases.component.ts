@@ -3,6 +3,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MusicDataService } from '../music-data.service';
 
 @Component({
+  standalone: false,
   selector: 'app-new-releases',
   templateUrl: './new-releases.component.html',
   styleUrls: ['./new-releases.component.css'],

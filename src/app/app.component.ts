@@ -11,6 +11,7 @@ import { NavigationStart, Router, Event } from '@angular/router';
 import { AuthService } from './auth.service';
 
 @Component({
+  standalone: false,
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
