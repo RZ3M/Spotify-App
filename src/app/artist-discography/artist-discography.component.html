@@ -19,7 +19,7 @@
 
 <mat-list *ngFor="let track of tracks">
   <mat-card>
-    <mat-card-content fxLayout="row wrap" fxLayout.xs="column">
+    <mat-card-content class="responsive-row">
       <img
         src="{{ track.album.images[0].url }}"
         alt="album cover"
@@ -29,7 +29,7 @@
         [style.max-width]="'5%'"
         [routerLink]="['/album', track.album.id]"
       />
-      <div fxFlex>
+      <div class="flex-item">
         <div [style.min-width]="'200px'" [style.margin]="'10px'">
           <strong>Track: </strong> {{ track.name }}<br />
           <strong>Album: </strong> {{ track.album.name }}<br /><br />
@@ -45,9 +45,9 @@
 
 <h1>Full Discography</h1>
 
-<div fxLayout="row wrap" fxLayout.xs="column">
+<div class="responsive-row">
   <!-- Single "Responsive" Card-->
-  <div fxFlex [style.margin]="'20px'" *ngFor="let album of albums">
+  <div class="flex-item" [style.margin]="'20px'" *ngFor="let album of albums">
     <mat-card [style.min-width]="'200px'">
       <mat-card-header>
         <mat-card-title>{{ album.name }}</mat-card-title>

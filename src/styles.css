@@ -1,5 +1,3 @@
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
-
 html,
 body {
   height: 100%;
@@ -15,8 +13,8 @@ body {
   font-size: 14px;
 }
 
-.mat-list-item,
-.mat-menu-item {
+.mat-mdc-list-item,
+.mat-mdc-menu-item {
   font-size: 14px !important;
 }
 
@@ -105,10 +103,36 @@ mat-sidenav {
   height: auto !important;
 }
 
-.mat-list-base .mat-list-item .mat-line {
+.mat-mdc-list-item .mat-mdc-list-item-title {
   white-space: normal !important;
 }
 
-.mat-sidenav-content .mat-list-item {
+.mat-sidenav-content .mat-mdc-list-item {
   height: auto !important;
+}
+
+/* CSS equivalents of the former Flex Layout directives. */
+.responsive-row {
+  display: flex;
+  flex-flow: row wrap;
+  box-sizing: border-box;
+}
+
+.flex-item {
+  flex: 1 1 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 599px) {
+  .responsive-row {
+    flex-direction: column;
+  }
+
+  .flex-item {
+    flex-basis: auto;
+  }
+
+  .hide-xs {
+    display: none;
+  }
 }

@@ -1,14 +1,14 @@
 <h1>{{ album?.name }}</h1>
 <p>
   Full track listing for {{ album?.name }}<br />Click the
-  <mat-icon mat-list-icon>queue_music</mat-icon> icon to <strong>add</strong> a
+  <mat-icon matListItemIcon>queue_music</mat-icon> icon to <strong>add</strong> a
   song from your favourites list
 </p>
 <br />
 
 <mat-card>
-  <mat-card-content fxLayout="row wrap" fxLayout.xs="column">
-    <div fxflex>
+  <mat-card-content class="responsive-row">
+    <div class="flex-item">
       <img
         src="{{ album?.images[1].url }}"
         alt="album cover"
@@ -16,20 +16,20 @@
         [style.max-width]="'90%'"
       />
     </div>
-    <div fxFlex>
+    <div class="flex-item">
       <div [style.min-width]="'300px'" [style.margin]="'10px'">
         <strong>Record Label: </strong> {{ album?.label }}<br />
         <strong>Release Date: </strong> {{ album?.release_date }}<br /><br />
         <strong>Tracks:</strong> {{ album?.total_tracks }}<br />
         <strong>Popularity: </strong>{{ album?.popularity }}<br /><br />
 
-        <mat-chip-list aria-label="Artist selection">
+        <mat-chip-set aria-label="Artist selection">
           <mat-chip
             *ngFor="let artist of album?.artists"
             [routerLink]="['/artist', artist.id]"
             >{{ artist.name }}</mat-chip
           >
-        </mat-chip-list>
+        </mat-chip-set>
         <br />
 
         <div *ngFor="let copyright of album?.copyrights">
@@ -45,10 +45,10 @@
 <mat-list>
   <!-- Single "Responsive" Material List Item-->
   <mat-list-item *ngFor="let track of album?.tracks.items">
-    <mat-icon mat-list-icon (click)="addToFavourites(track.id)"
+    <mat-icon matListItemIcon (click)="addToFavourites(track.id)"
       >queue_music</mat-icon
     >
-    <div mat-line>
+    <div matListItemTitle>
       <mat-card>
         <mat-card-content>
           {{ track.track_number }}: {{ track.name }} -

@@ -13,7 +13,7 @@
 
     <button *ngIf="token" mat-button [matMenuTriggerFor]="userMenu">
       <mat-icon>person</mat-icon>
-      <span fxShow fxHide.xs> {{ token.userName }} </span>
+      <span class="hide-xs"> {{ token.userName }} </span>
     </button>
     <mat-menu
       #userMenu="matMenu"
@@ -54,8 +54,8 @@
         </div>
 
         <a mat-list-item routerLink="/newReleases">
-          <mat-icon mat-list-icon> library_music </mat-icon>
-          <p mat-line>New Releases</p>
+          <mat-icon matListItemIcon> library_music </mat-icon>
+          <p matListItemTitle>New Releases</p>
         </a>
 
         <a
@@ -63,15 +63,15 @@
           routerLinkActive="active"
           [routerLink]="['/favourites']"
         >
-          <mat-icon mat-list-icon> favorite </mat-icon>
-          <p mat-line>Favourites</p>
+          <mat-icon matListItemIcon> favorite </mat-icon>
+          <p matListItemTitle>Favourites</p>
         </a>
 
         <mat-divider></mat-divider>
 
         <a id="push-bottom" mat-list-item routerLink="/about">
-          <mat-icon mat-list-icon> info_outline </mat-icon>
-          <p mat-line>About</p>
+          <mat-icon matListItemIcon> info_outline </mat-icon>
+          <p matListItemTitle>About</p>
         </a>
       </mat-nav-list>
     </mat-sidenav>
